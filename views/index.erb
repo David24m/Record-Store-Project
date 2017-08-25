@@ -1,0 +1,13 @@
+<h1>List of the stores albums:</h1>
+
+<% for invent in @inventory do %>
+
+
+<p>Artist Name: <%= invent.artist.artist_name %></p>
+<p>Album Name: <%= invent.album.album_name %></p>
+<p>Genre: <%= invent.album.genre %></p>
+<p>Number In Stock: <%= invent.album.stock %></p>
+
+<hr>
+
+ <% end %>
