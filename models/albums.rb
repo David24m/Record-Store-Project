@@ -1,15 +1,17 @@
 require_relative( '../db/sql_runner' )
+require_relative( './artists' )
 
 class Album
 
   attr_reader( :id )
-  attr_accessor( :album_name, :stock, :genre)
+  attr_accessor( :album_name, :stock, :genre, :artist_id)
 
   def initialize( details )
     @id = details['id'].to_i
     @album_name = details['album_name']
     @stock = details['stock']
     @genre = details['genre']
+    @artist_id = details['artist_id'].to_i
   end
 
   def save()
@@ -17,14 +19,15 @@ class Album
     (
     album_name,
     stock,
-    genre
+    genre,
+    artist_id
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id;'
-    values = [@album_name, @stock, @genre]
+    values = [@album_name, @stock, @genre, @artist_id]
     results = SqlRunner.run( sql, values ).first()
     @id = results['id'].to_i
   end
@@ -61,12 +64,13 @@ class Album
     (
     album_name,
     stock,
-    genre
+    genre,
+    artist_id
     )
     =
-    ($1, $2, $3)
-    WHERE id = $4;"
-    values = [@album_name, @stock, @genre, @id]
+    ($1, $2, $3, $4)
+    WHERE id = $5;"
+    values = [@album_name, @stock, @genre, @artist_id, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -75,10 +79,9 @@ class Album
   end
 
   def artist()
-    sql = 'SELECT artists.* FROM artists
-      INNER JOIN inventory ON inventory.artist_id = artists.id
-      WHERE album_id = $1;'
-      values = [@id]
+    sql = 'SELECT * FROM artists
+      WHERE id = $1;'
+      values = [@artist_id]
       results = SqlRunner.run( sql, values )
       return Artist.map_items(results)
     end

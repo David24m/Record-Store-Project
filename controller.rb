@@ -1,11 +1,18 @@
-require( 'sinatra' )
-require( 'sinatra/contrib/all' ) if development?
-require_relative( './models/albums.rb' )
-require_relative( './models/artists.rb' )
-require_relative( './models/inventory.rb' )
-
-#INDEX
-get '/recordstore' do
-  @inventory = Inventory.all
-  erb(:index)
-end
+# require( 'sinatra' )
+# require( 'sinatra/contrib/all' ) if development?
+# require_relative( './models/artists.rb' )
+# require_relative( './models/albums.rb' )
+#
+# #INDEX
+# get '/recordstore' do
+#   @album = Album.all
+#   erb(:index)
+# end
+#
+# #new
+# get '/recordstore/new' do
+#   @artists = Artist.all
+#   erb( :new )
+# end
+#
+# #CREATE

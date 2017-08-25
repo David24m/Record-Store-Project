@@ -1,4 +1,5 @@
 require_relative( '../db/sql_runner' )
+require_relative( './albums' )
 
 class Artist
 
@@ -71,11 +72,14 @@ class Artist
 
   def album()
     sql = 'SELECT albums.* FROM albums
-      INNER JOIN inventory ON inventory.album_id = albums.id
+      INNER JOIN artists ON artist_id = artists.id
       WHERE artist_id = $1;'
       values = [@id]
       results = SqlRunner.run( sql, values )
       return Album.map_items(results)
+
+      # result = albums.map { |album| Album.new( album ) }
+      # return result
     end
 
 
