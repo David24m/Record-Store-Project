@@ -79,11 +79,13 @@ class Album
   end
 
   def artist()
-    sql = 'SELECT * FROM artists
+    sql = 'SELECT artist_name FROM artists
       WHERE id = $1;'
       values = [@artist_id]
       results = SqlRunner.run( sql, values )
-      return Artist.map_items(results)
+      artists = results.map { |result| Artist.new(result) }
+      return artists.first
+      # return Artist.map_items(results)
     end
 
     def stock_level()

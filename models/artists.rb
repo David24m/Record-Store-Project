@@ -60,8 +60,8 @@ class Artist
     artist_name
     )
     =
-    ($1, $2)
-    WHERE id = $3;'
+    ($1)
+    WHERE id = $2;'
     values = [@artist_name, @id]
     SqlRunner.run( sql, values )
   end

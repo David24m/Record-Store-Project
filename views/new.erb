@@ -1,12 +1,12 @@
-<!-- <h1>New item in stock?</h1>
+<h1>New item in stock?</h1>
 
 <form action="/recordstore" method="POST">
 
   <label>
       <label for="artist-name-field">Artist Name:</label>
-      <select id="artist-name-field" name="artist_name"/>
+      <select id="artist-name-field" name="artist_id"/>
       <% for artist in @artists do %>
-        <option value="<% artist.id %>"><%= artist.artist_name %></option>
+        <option value="<%= artist.id %>"><%= artist.artist_name %></option>
       <% end %>
       </select>
 
@@ -21,4 +21,4 @@
 
       <input type="submit" value="Add New Album To Stock">
 
-</form> -->
+</form>
