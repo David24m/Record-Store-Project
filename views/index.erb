@@ -7,6 +7,14 @@
 <p>Genre: <%= album.genre %></p>
 <p>Number In Stock: <%= album.stock %></p>
 
+<form action="/recordstore/<%= album.id %>/edit">
+  <input type="submit" value="Edit album details">
+</form>
+
+<form action="/recordstore/<%= album.id %>/delete" method="post">
+  <input type="submit" value="Delete Album">
+</form>
+
 <hr>
 
  <% end %>

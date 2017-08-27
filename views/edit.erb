@@ -1,0 +1,22 @@
+<form action="/recordstore/<%= @albums.id %>" method="POST">
+
+  <label>
+      <label for="artist-name-field">Artist Name:</label>
+      <select id="artist-name-field" name="artist_id"/>
+      <% for artist in @artists do %>
+        <option value="<%= artist.id %>"><%= artist.artist_name %></option>
+      <% end %>
+      </select>
+
+      <label for="album-name-field">Album Name:</label>
+      <input id="album-name-field" name="album_name" type="text" value="<%= @albums.album_name %>"/>
+
+      <label for="album-genre-field">Album Genre:</label>
+      <input for="album-genre-field" name="genre" type="text" value="<%= @albums.genre %>"/>
+
+      <label for="album-stock-level">Number of Albums in Stock:</label>
+      <input id="album-stock-level" name="stock" type="text" value="<%= @albums.stock %>"/>
+
+      <input type="submit" value="Edit Album">
+
+</form>

@@ -40,10 +40,10 @@ class Album
   end
 
   def self.find(id)
-    sql = 'SELECT FROM albums WHERE id = $1'
+    sql = 'SELECT * FROM albums WHERE id = $1'
     values = [id]
-    results = SqlRunner( run, values )
-    album = Album.new( results [0] )
+    results = SqlRunner.run( sql, values )
+    album = Album.new( results[0] )
     return album
   end
 
@@ -54,7 +54,7 @@ class Album
   end
 
   def delete()
-    sql "DELETE FROM albums WHERE id = $1"
+    sql = "DELETE FROM albums WHERE id = $1"
     values = [@id]
     SqlRunner.run( sql, values )
   end
