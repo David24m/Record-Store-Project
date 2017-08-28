@@ -2,10 +2,13 @@
 
 <% for album in @albums do %>
 
+<div class="products">
+    <div class="product">
 <p>Artist Name: <%= album.artist.artist_name %></p>
 <p>Album Name: <%= album.album_name %></p>
 <p>Genre: <%= album.genre %></p>
 <p>Number In Stock: <%= album.stock %></p>
+
 
 <form action="/recordstore/<%= album.id %>/edit">
   <input type="submit" value="Edit album details">
@@ -15,6 +18,15 @@
   <input type="submit" value="Delete Album">
 </form>
 
-<hr>
+<form action="/recordstore/artist/<%= album.artist_id %>/edit" method="get">
+  <input type="submit" value="Edit Artist">
+</form>
+
+<form action="/recordstore/artist/<%= album.artist_id %>/delete" method="get">
+  <input type="submit" value="Delete Artist">
+</form>
+
+  </div>
+</div>
 
  <% end %>

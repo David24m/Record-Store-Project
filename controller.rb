@@ -56,3 +56,35 @@ post '/recordstore/:id/delete' do
   @albums.delete
   redirect '/recordstore'
 end
+
+#EDIT
+get '/recordstore/artist/:id/edit' do
+  @artists = Artist.find( params[:id] )
+  erb( :edit_artist )
+end
+
+#UPDATE
+post '/recordstore/artist/:id' do
+  @artists = Artist.new( params )
+  @artists.update()
+  redirect to '/recordstore'
+end
+
+
+
+
+
+
+
+# /recordstore/artist/1/delete
+get '/recordstore/artist/:id/delete' do
+  @artists = Artist.find( params[:id] )
+  erb( :delete )
+end
+
+#DELETE
+post '/recordstore/:id/artist' do
+  @artists = Artist.find( params[:id] )
+  @artists.delete
+  redirect '/recordstore'
+end

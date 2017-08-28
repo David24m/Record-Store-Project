@@ -2,14 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Record Store</title>
+      <link rel="stylesheet" type="text/css" href="/styles.css">
   </head>
   <body>
     <nav>
-      <ul>
-        <li><a href="/recordstore/new/artist">Add Artist</a></li>
-        <li><a href="/recordstore/new/album">Add Album</a></li>
-      </ul>
+      <h1>
+        <a href="/recordstore/new/artist" style= "text-decoration:none">Add Artist</a>
+        <a href="/recordstore/new/album" style= "text-decoration:none">Add Album</a>
+        <a href="/recordstore/artist/:id/delete" style= "text-decoration:none">Delete Artist</a>      </h1>
     </nav>
 
 <%= yield %>

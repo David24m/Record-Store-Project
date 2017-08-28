@@ -1,0 +1,8 @@
+<form action="/recordstore/<%= @artists.id %>/artist" method="POST">
+
+    <label for="artist-name-field">Artist Name:</label>
+    <input id="artist-name-field" name="artist_name" type="text" value="<%= @artists.artist_name %>"/>
+
+    <input type="submit" value="Delete Artist">
+
+  </form>

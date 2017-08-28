@@ -39,7 +39,7 @@ class Artist
     values = [id]
     results = SqlRunner.run( sql, values )
     artists = Artist.new( results[0] )
-    return artist
+    return artists
   end
 
   def self.delete_all()

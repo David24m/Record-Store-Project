@@ -1,0 +1,26 @@
+nav{
+  display: inline;
+  text-align: right;
+  font-family: helvetica;
+}
+
+a{
+  margin-left: 40px;
+}
+
+.products {
+  background: #EEEFF1;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 25%;
+  margin: 5px;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+.product {
+  display: inline-block;
+  margin: 0px 2% 80px 2%;
+  text-align: center;
+  width: 45%;
+}
