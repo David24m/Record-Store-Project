@@ -1,0 +1,21 @@
+<h1>List of all artists by genre</h1>
+
+
+<table border=1>
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for album in @albums do %>
+      <tr>
+        <td><%= album.artist.artist_name %></td>
+        <td><%= album.album_name %></td>
+        <td><%= album.genre %></td>
+      </tr>
+      <% end %>
+    </tbody>
+</table>

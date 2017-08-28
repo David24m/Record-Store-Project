@@ -70,13 +70,6 @@ post '/recordstore/artist/:id' do
   redirect to '/recordstore'
 end
 
-
-
-
-
-
-
-# /recordstore/artist/1/delete
 get '/recordstore/artist/:id/delete' do
   @artists = Artist.find( params[:id] )
   erb( :delete )
@@ -87,4 +80,11 @@ post '/recordstore/:id/artist' do
   @artists = Artist.find( params[:id] )
   @artists.delete
   redirect '/recordstore'
+end
+
+#Genre find
+get '/recordstore/genre' do
+  @albums = Album.all.sort_by {|album| album.genre}
+  @artists = Artist.all
+  erb(:genre)
 end

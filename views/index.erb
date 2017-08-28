@@ -3,30 +3,29 @@
 <% for album in @albums do %>
 
 <div class="products">
-    <div class="product">
-<p>Artist Name: <%= album.artist.artist_name %></p>
-<p>Album Name: <%= album.album_name %></p>
-<p>Genre: <%= album.genre %></p>
-<p>Number In Stock: <%= album.stock %></p>
+<p><b> <%= album.artist.artist_name %></b></p>
+<p><c><%= album.album_name %></c></p>
+<p><d><%= album.genre %></d></p>
+<p><c>Stock Level: <e><%= album.stock_level %></e></c></p>
+<p><c> Price Mark Up <e> £<%= album.markup %></e></c></p>
 
 
 <form action="/recordstore/<%= album.id %>/edit">
-  <input type="submit" value="Edit album details">
+  <input class="button" type="submit" value="Edit album details">
 </form>
 
 <form action="/recordstore/<%= album.id %>/delete" method="post">
-  <input type="submit" value="Delete Album">
+  <input class="button" type="submit" value="Delete Album">
 </form>
 
 <form action="/recordstore/artist/<%= album.artist_id %>/edit" method="get">
-  <input type="submit" value="Edit Artist">
+  <input class="button" type="submit" value="Edit Artist">
 </form>
 
 <form action="/recordstore/artist/<%= album.artist_id %>/delete" method="get">
-  <input type="submit" value="Delete Artist">
+  <input class="button" type="submit" value="Delete Artist">
 </form>
 
-  </div>
 </div>
 
  <% end %>

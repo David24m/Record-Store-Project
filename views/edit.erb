@@ -2,9 +2,13 @@
 
   <label>
       <label for="artist-name-field">Artist Name:</label>
-      <select id="artist-name-field" name="artist_id" value="<%= @albums.artist.artist_name %>"/>
+      <select id="artist-name-field" name="artist_id" selected="<%= @albums.artist_id %>"/>
       <% for artist in @artists do %>
-        <option value="<%= artist.id %>"><%= artist.artist_name %></option>
+        <% if artist.id == @albums.artist_id %>
+          <option value=<%= artist.id %> selected><%= artist.artist_name %></option>
+        <% else %>
+          <option value=<%= artist.id %>><%=artist.artist_name %></option>
+        <% end %>
       <% end %>
       </select>
 
@@ -16,6 +20,12 @@
 
       <label for="album-stock-level">Number of Albums in Stock:</label>
       <input id="album-stock-level" name="stock" type="text" value="<%= @albums.stock %>"/>
+
+      <label for="album-sale-price">Sale Price of Album:</label>
+      <input id="album-sale-price" name="sale_price" type="text" value="<%= @albums.sale_price %>"/>
+
+      <label for="album-buy-price">Buy Price of Album:</label>
+      <input id="album-buy-price" name="buy_price" type="text" value="<%= @albums.buy_price %>"/>
 
       <input type="submit" value="Edit Album">
 

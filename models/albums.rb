@@ -3,15 +3,18 @@ require_relative( './artists' )
 
 class Album
 
-  attr_reader( :id )
-  attr_accessor( :album_name, :stock, :genre, :artist_id)
+  attr_reader( :id, :markup )
+  attr_accessor( :album_name, :stock, :genre, :artist_id, :sale_price, :buy_price)
 
   def initialize( details )
     @id = details['id'].to_i
     @album_name = details['album_name']
-    @stock = details['stock']
+    @stock = details['stock'].to_i
     @genre = details['genre']
     @artist_id = details['artist_id'].to_i
+    @sale_price = details['sale_price'].to_i
+    @buy_price = details['buy_price'].to_i
+    @markup= @sale_price - @buy_price
   end
 
   def save()
@@ -20,14 +23,16 @@ class Album
     album_name,
     stock,
     genre,
-    artist_id
+    artist_id,
+    sale_price,
+    buy_price
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id;'
-    values = [@album_name, @stock, @genre, @artist_id]
+    values = [@album_name, @stock, @genre, @artist_id, @sale_price, @buy_price]
     results = SqlRunner.run( sql, values ).first()
     @id = results['id'].to_i
   end
@@ -65,12 +70,14 @@ class Album
     album_name,
     stock,
     genre,
-    artist_id
+    artist_id,
+    sale_price,
+    buy_price
     )
     =
-    ($1, $2, $3, $4)
-    WHERE id = $5;"
-    values = [@album_name, @stock, @genre, @artist_id, @id]
+    ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7;"
+    values = [@album_name, @stock, @genre, @artist_id, @sale_price, @buy_price, @id]
     SqlRunner.run( sql, values )
   end
 

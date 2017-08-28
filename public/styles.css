@@ -1,3 +1,16 @@
+html {
+  background: #0A0B39 url('/records.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  color: #8EDFD7
+}
+
+h1{
+  color: #6665AA;
+  text-align: center;
+}
+
 nav{
   display: inline;
   text-align: right;
@@ -8,19 +21,46 @@ a{
   margin-left: 40px;
 }
 
+b{
+  font-size: 30px;
+}
+
+c{
+  font-size: 15px;
+
+}
+
+d{
+  font-size: 13px;
+  color: #6665AA;
+}
+
+e{
+  color: #EC5890;
+}
+
+p{
+  margin: 5px;
+}
+
+table{
+  align-items: center;
+  border-collapse: collapse;
+}
+
+.button {
+  background-color: #8EDFD7;
+  border-radius: 12px;
+}
+
 .products {
-  background: #EEEFF1;
-  display: inline-block;
+  float: right;
+  display: inline-grid;
+  border: 2px solid #6665AA;
+  border-radius: 5px;
+  text-align: center;
   box-sizing: border-box;
   width: 25%;
   margin: 5px;
   padding: 10px 0px;
-  text-align: center;
-}
-
-.product {
-  display: inline-block;
-  margin: 0px 2% 80px 2%;
-  text-align: center;
-  width: 45%;
 }
