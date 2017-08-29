@@ -1,32 +1,32 @@
-<h1>New item in stock?</h1>
+<h1>Add a new album</h1>
 
 <form class="new" action="/recordstore" method="POST">
 
 
   <label>
-      <label for="artist-name-field">Artist Name:</label>
-      <select id="artist-name-field" name="artist_id"/>
+      <label for="artist-name-field"></label>
+      <select class="drop-menu" id="artist-name-field" name="artist_id"/>
       <% for artist in @artists do %>
         <option value="<%= artist.id %>"><%= artist.artist_name %></option>
       <% end %>
       </select>
 
-      <label for="album-name-field">Album Name:</label>
-      <input id="album-name-field" name="album_name" type="text"/>
+      <label for="album-name-field"></label>
+      <input class="input-box" id="album-name-field" name="album_name" placeholder="Album Name..." type="text"/>
 
-      <label for="album-genre-field">Album Genre:</label>
-      <input for="album-genre-field" name="genre" type="text"/>
+      <label for="album-genre-field"></label>
+      <input class="input-box" for="album-genre-field" name="genre" placeholder="Genre..." type="text"/>
 
-      <label for="album-stock-level">Number of Albums in Stock:</label>
-      <input id="album-stock-level" name="stock" type="text"/>
+      <label for="album-stock-level"></label>
+      <input class="input-box" id="album-stock-level" name="stock" placeholder="Number in Stock..." type="text"/>
 
-      <label for="album-sale-price">Sale Price of Album:</label>
-      <input id="album-sale-price" name="sale_price" type="text"/>
+      <label for="album-sale-price"></label>
+      <input class="input-box" id="album-sale-price" name="sale_price" placeholder="Sale Price..." type="text"/>
 
-      <label for="album-buy-price">Buy Price of Album:</label>
-      <input id="album-buy-price" name="buy_price" type="text"/>
+      <label for="album-buy-price"></label>
+      <input class="input-box" id="album-buy-price" name="buy_price" placeholder="Buy Price..." type="text"/>
 
-      <input type="submit" value="Add New Album To Stock">
+      <input class="button" type="submit" value="ADD">
 
 
 </form>
