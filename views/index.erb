@@ -3,29 +3,38 @@
 <% for album in @albums do %>
 
 <div class="products">
-<p><b> <%= album.artist.artist_name %></b></p>
-<p><c><%= album.album_name %></c></p>
-<p><d><%= album.genre %></d></p>
-<p><c>Stock Level: <e><%= album.stock_level %></e></c></p>
-<p><c> Price Mark Up <e> £<%= album.markup %></e></c></p>
+  <div class="artist"> <%= album.artist.artist_name %></div>
+  <div class="details"><%= album.album_name %></div>
+  <div class="genre"><%= album.genre %></div>
+  <div class="details">Stock Level:</div> <div class="value"><%= album.stock_level %></div>
+  <div class="details"> Price Mark Up</div> <div class="value"> £<%= album.markup %></div>
+
+  <div class="button-bar">
+    <form action="/recordstore/<%= album.id %>/edit">
+      <input class="button" type="submit" value="Edit Album">
+    </form>
 
 
-<form action="/recordstore/<%= album.id %>/edit">
-  <input class="button" type="submit" value="Edit album details">
-</form>
+    <form action="/recordstore/<%= album.id %>/delete" method="post">
+      <input class="hit" type="submit" value="Delete Album">
+    </form>
+  </div>
 
-<form action="/recordstore/<%= album.id %>/delete" method="post">
-  <input class="button" type="submit" value="Delete Album">
-</form>
+  <div class="button-bar">
+    <form action="/recordstore/artist/<%= album.artist_id %>/edit" method="get">
+      <input class="button" type="submit" value="Edit Artist">
+    </form>
 
-<form action="/recordstore/artist/<%= album.artist_id %>/edit" method="get">
-  <input class="button" type="submit" value="Edit Artist">
-</form>
+    <form action="/recordstore/artist/<%= album.artist_id %>/delete" method="get">
+      <input class="hit" type="submit" value="Delete Artist">
+    </form>
 
-<form action="/recordstore/artist/<%= album.artist_id %>/delete" method="get">
-  <input class="button" type="submit" value="Delete Artist">
-</form>
 
+    <!-- <a href="/recordstore/<%= album.id %>/edit" class="button">Edit Album</a>
+    <a href="/recordstore/artist/<%= album.artist_id %>/edit" class="button">Edit Artist</a>
+    <a href="/recordstore/<%= album.id %>/delete" class="button">Delete Album</a>
+    <a href="/recordstore/artist/<%= album.artist_id %>/delete" class="button">Delete Artist</a> -->
+  </div>
 </div>
 
  <% end %>
