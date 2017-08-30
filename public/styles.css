@@ -51,7 +51,20 @@ td {
   color: #EC5890;
 }
 
-.list, .cover{
+.company{
+  position: absolute;
+  left: 340px;
+}
+
+.cover-sheet{
+  padding-top: 75px;
+}
+
+.cover{
+  padding-left: 366px;
+}
+
+.list{
   padding-left: 300px;
 }
 
@@ -97,7 +110,7 @@ td {
   color: #8EDFD7;
 }
 
-.button, .delete, .add-album, .genre-look {
+.button, .delete, .new-album, .genre-look {
   background-color: #8EDFD7;
   border: none;
   border-radius: 4px;
@@ -130,18 +143,18 @@ td {
   background-color: #4E4E7E;
 }
 
-.add-album {
+.new-album {
   background-color: #EC5890;
   color: white;
 }
 
-.add-album:hover{
+.new-album:hover{
   background-color: #9D3E62;
 }
 
 .genre-look {
   background-color: #F9F3A1;
-  color: white;
+  color:
 }
 
 .genre-look:hover{
