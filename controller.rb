@@ -3,8 +3,16 @@ require( 'sinatra/contrib/all' ) if development?
 require_relative( './models/artists.rb' )
 require_relative( './models/albums.rb' )
 
-#INDEX
+#cover page
 get '/recordstore' do
+  erb(:cover)
+end
+
+
+
+
+#INDEX
+get '/recordstore/stock' do
   @albums = Album.all
   @artists = Artist.all
   erb(:index)
@@ -20,7 +28,7 @@ end
 post '/recordstore/new' do
   @artists = Artist.new(params)
   @artists.save
-  redirect to '/recordstore'
+  redirect to '/recordstore/new/album'
 end
 
 #new
@@ -33,7 +41,7 @@ end
 post '/recordstore' do
   @albums = Album.new(params)
   @albums.save
-  redirect to '/recordstore'
+  redirect to '/recordstore/stock'
 end
 
 #EDIT
@@ -47,14 +55,14 @@ end
 post '/recordstore/:id' do
   @albums = Album.new( params )
   @albums.update()
-  redirect to '/recordstore'
+  redirect to '/recordstore/stock'
 end
 
 #DELETE
 post '/recordstore/:id/delete' do
   @albums = Album.find( params[:id] )
   @albums.delete
-  redirect '/recordstore'
+  redirect '/recordstore/stock'
 end
 
 #EDIT
@@ -67,7 +75,7 @@ end
 post '/recordstore/artist/:id' do
   @artists = Artist.new( params )
   @artists.update()
-  redirect to '/recordstore'
+  redirect to '/recordstore/stock'
 end
 
 get '/recordstore/artist/:id/delete' do
@@ -79,7 +87,7 @@ end
 post '/recordstore/:id/artist' do
   @artists = Artist.find( params[:id] )
   @artists.delete
-  redirect '/recordstore'
+  redirect '/recordstore/stock'
 end
 
 #Genre find

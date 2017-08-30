@@ -14,19 +14,19 @@
       <% end %>
       </select>
 
-      <label for="album-name-field">Album Name:</label>
+      <label class="edit-label" for="album-name-field">Album Name:</label>
       <input class="input-box" id="album-name-field" name="album_name" type="text" value="<%= @albums.album_name %>"/>
 
-      <label for="album-genre-field">Album Genre:</label>
+      <label class="edit-label" for="album-genre-field">Album Genre:</label>
       <input class="input-box" for="album-genre-field" name="genre" type="text" value="<%= @albums.genre %>"/>
 
-      <label for="album-stock-level">Number of Albums in Stock:</label>
+      <label class="edit-stock"  for="album-stock-level">Number of Albums in Stock:</label>
       <input class="input-box" id="album-stock-level" name="stock" type="text" value="<%= @albums.stock %>"/>
 
-      <label for="album-sale-price">Sale Price of Album:</label>
+      <label class="edit-price" for="album-sale-price">Sale Price of Album:</label>
       <input class="input-box" id="album-sale-price" name="sale_price" type="text" value="<%= @albums.sale_price %>"/>
 
-      <label for="album-buy-price">Buy Price of Album:</label>
+      <label class="edit-price" for="album-buy-price">Buy Price of Album:</label>
       <input class="input-box" id="album-buy-price" name="buy_price" type="text" value="<%= @albums.buy_price %>"/>
 
       <input class="button" type="submit" value="EDIT">

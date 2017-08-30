@@ -1,10 +1,10 @@
-<h1>List of the stores albums:</h1>
+<h1 class="list">List of the stores albums:</h1>
 
 <% for album in @albums do %>
 
 <div class="products">
   <div class="artist"> <%= album.artist.artist_name %></div>
-  <div class="details"><%= album.album_name %></div>
+  <div class="album"><%= album.album_name %></div>
   <div class="genre"><%= album.genre %></div>
   <div class="details">Stock Level:</div> <div class="value"><%= album.stock_level %></div>
   <div class="details"> Price Mark Up:</div> <div class="value"> £<%= album.markup %></div>
