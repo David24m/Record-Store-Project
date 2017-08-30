@@ -30,6 +30,10 @@ a{
   color: white;
 }
 
+article{
+  width: 100%;
+}
+
 a:hover{
   color: #EC5890;
 }
@@ -161,7 +165,6 @@ td {
   background-color: #C9C488;
 }
 
-
 .products {
   float: right;
   display: inline-grid;
@@ -174,6 +177,23 @@ td {
   margin: 20px;
   padding: 5px 0px;
 }
+
+
+/*Attempt at making it responsive, ran out of time*/
+/*.products{
+  display: flex inline-grid;
+  flex-wrap: wrap;
+  float: right;
+  border: 4px solid #6665AA;
+  border-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  width: 450px;
+  height:320px;
+  max-height: 700px;
+  margin: 20px;
+  padding: 5px 0px;
+}*/
 
 .function{
   align-items: center;
@@ -221,3 +241,11 @@ td {
   border-radius: 6px;
   font-size: 13px;
 }
+
+/*@media (min-width: 500px) {
+
+}
+
+@media (min-width: 800px) {
+
+}*/
