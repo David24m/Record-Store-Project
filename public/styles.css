@@ -45,7 +45,7 @@ p{
 table {
   font-size: 30px;
   float: right;
-  margin-right:20px;
+  margin-right: 50px;
   margin-bottom: 30px;
   color: #6665AA;
   font-family: 'Rhodium Libre', sans-serif;
@@ -53,6 +53,7 @@ table {
 
 td {
   color: #EC5890;
+  font-family: arial;
 }
 
 .company{
@@ -66,6 +67,14 @@ td {
 
 .cover{
   padding-left: 366px;
+}
+
+.cover-title{
+  padding-right: 133px;
+}
+
+.table-title{
+  padding-left: 370px;
 }
 
 .list{
@@ -114,7 +123,7 @@ td {
   color: #8EDFD7;
 }
 
-.button, .delete, .new-album, .genre-look {
+.button, .delete {
   background-color: #8EDFD7;
   border: none;
   border-radius: 4px;
@@ -147,6 +156,42 @@ td {
   background-color: #4E4E7E;
 }
 
+.button-stock, .button-album, .new-album, .genre-look {
+  background-color: #8EDFD7;
+  border: none;
+  border-radius: 4px;
+  font-family: Helvetica;
+  font-size: 18px;
+  float: left;
+  display: inline-block;
+  color: #0A0B39;
+  text-decoration: none;
+  margin: 5px;
+  width: 205px;
+  height: 35px;
+  padding-top: 11px;
+}
+
+.button-stock {
+  background-color: #8EDFD7;
+  color: #0A0B39;
+}
+
+.button-stock:hover{
+  background-color: #5A8B86;
+  color: white;
+}
+
+.button-album {
+  background-color: #6665AA;
+  color: white;
+}
+
+.button-album:hover{
+  background-color: #4E4E7E;
+  color: #0A0B39;
+}
+
 .new-album {
   background-color: #EC5890;
   color: white;
@@ -154,15 +199,17 @@ td {
 
 .new-album:hover{
   background-color: #9D3E62;
+  color: #0A0B39;
 }
 
 .genre-look {
   background-color: #F9F3A1;
-  color:
+  color: #0A0B39;
 }
 
 .genre-look:hover{
   background-color: #C9C488;
+  color: white;
 }
 
 .products {
