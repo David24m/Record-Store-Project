@@ -31,3 +31,4 @@ Calculate the possible markup on items and show on inventory page
 Add a genre to an Album
 Any other ideas you might come up with
 
+This project was completed using Ruby, PostgreSQL and the Sinatra framework and implemented using a RESTful methodology. I was very proud of the final result as it dealt with the MVP of the project, all the requested extensions as well resulting in a good looking app with a high level of functionality.
